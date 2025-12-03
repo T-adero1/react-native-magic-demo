@@ -85,13 +85,13 @@ export default function CryptoScreen() {
   }, [ciphertexts, magic.gdkms]);
 
   /**
-   * switchEVMChain
+   * switchChain
    * */
   const switchNetwork = async (chainId: number) => {
     console.log('magic', magic);
     console.log('Attempting to switch network to chainId:', chainId);
-    const res = await magic.evm.switchEVMChain(chainId);
-    console.log('switchEVMChain result:', res);
+    const res = await magic.evm.switchChain(chainId);
+    console.log('switchChain result:', res);
     Alert.alert(JSON.stringify(res));
   };
 
@@ -167,7 +167,7 @@ export default function CryptoScreen() {
                   </View>
                 </View>
                 <View style={styles.actionContainer}>
-                  <Button onPress={() => switchNetwork(Number(chainId))} title="switchEVMChain" />
+                  <Button onPress={() => switchNetwork(Number(chainId))} title="switchChain" />
                 </View>
               </Card>
               {/* Solana Address */}

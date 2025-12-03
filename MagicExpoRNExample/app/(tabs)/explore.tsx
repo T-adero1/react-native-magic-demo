@@ -81,11 +81,11 @@ export default function CryptoScreen() {
     };
 
     /**
-     * switchEVMChain
+     * switchChain
      * */
     const switchNetwork = async (chainId: number) => {
         try {
-            const res = await magic.evm.switchEVMChain(chainId);
+            const res = await magic.evm.switchChain(chainId);
             if (typeof res.network === 'string') {
                 Alert.alert('Success', `Switched to ${res.network}`);
             } else {
